@@ -1,0 +1,32 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.eslint.json",
+      "./tsconfig.json" //temp fix for typescript-eslint bug: https://github.com/typescript-eslint/typescript-eslint/issues/856
+    ],
+    "createDefaultProgram": true  // temp fix for
+    // https://github.com/typescript-eslint/typescript-eslint/issues/864
+    // https://github.com/typescript-eslint/typescript-eslint/issues/890
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "prettier/prettier": "warn"
+  }
+}
